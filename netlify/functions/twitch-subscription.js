@@ -1,7 +1,7 @@
 exports.handler = async (event) => {
-    const { headers = [] } event;
+    const { headers = [] } = event;
 
-    const type = headers['twitch_eventsub-message-type'] ?? 'no type';
+    const type = headers['twitch_eventsub-message-type'] || 'no type';
 
     return {
         statusCode: 200,
